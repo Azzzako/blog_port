@@ -24,7 +24,7 @@ function Layout({ children }) {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+      <Header/>
 
       <main>{children}</main>
 

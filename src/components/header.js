@@ -1,11 +1,18 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
+import * as React from "react"
+import { Link } from "gatsby"
+import { animated, useSpring } from "@react-spring/web"
 
-function Header({ siteTitle }) {
-  return <header>
-    
-  </header>
-  ;
+
+const Header = () => {
+  
+  return (
+    <header className="bg-red-400">
+      <div>
+        
+      </div>
+     
+    </header>
+  )
 }
 
-export default Header;
+export default Header
