@@ -9,6 +9,7 @@
     "@react-spring/parallax": "^0.0.0-aefd1e584376be38b1f6ca1ca74e061c4ce9b9d8-20230225174818",
     "@react-spring/web": "^9.7.3",
     "gatsby": "^5.12.4",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-mdx": "^5.12.0",

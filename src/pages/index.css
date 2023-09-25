@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Rock 3D';
+  src: url('../styles/fonts/rock3d-regular.woff') format('woff')
+}
+
+body{
+  background-color: white;
+  font-family: "Rock 3D", sans-serif ;
+}
+
+body h1{
+  font-size: 200px;
+}

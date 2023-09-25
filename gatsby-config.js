@@ -23,6 +23,7 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
