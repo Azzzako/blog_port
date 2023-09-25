@@ -22,14 +22,13 @@ function Layout({ children }) {
     }
   `);
 
-  return (
+  return ( 
     <>
-      <Header/>
+      <Header />
 
-      <main>{children}</main>
-
+      {children}
     </>
-  );
+  )
 }
 
 export default Layout;
