@@ -1,13 +1,19 @@
 @font-face {
-  font-family: 'Rock 3D';
+  font-family: 'Rock';
   src: url('../styles/fonts/rock3d-regular.woff') format('woff')
 }
 
-body{
-  background-color: white;
-  font-family: "Rock 3D", sans-serif ;
+@font-face {
+  font-family: 'Barriecito';
+  src: url('../styles/fonts/Barriecito-Regular.woff') format('woff');
 }
 
-body h1{
-  font-size: 200px;
+@font-face {
+  font-family: 'Roboto1';
+  src: url('../styles/fonts/RobotoMono-VariableFont_wght.woff');
 }
+
+html, body{
+  background-color: black;
+}
+
