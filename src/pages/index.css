@@ -13,7 +13,10 @@
   src: url('../styles/fonts/RobotoMono-VariableFont_wght.woff');
 }
 
-html, body{
+body{
   background-color: black;
+  
 }
+
+
 
