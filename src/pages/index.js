@@ -17,10 +17,15 @@ import {
   IoLogoNodejs,
   IoLogoHtml5,
   IoLogoCss3,
+  IoLogoGithub,
+  IoFolder
 } from "react-icons/io5"
-import { PiHandTap } from "react-icons/pi"
+import { BsArrowUpCircle, BsLinkedin } from "react-icons/bs"
+import { BiLogoGmail } from "react-icons/bi"
 import { SiRedux, SiTailwindcss } from "react-icons/si"
 import { certifications, experience } from "../components/helpers/helpers"
+import { Link } from "gatsby"
+import CV from '../images/cv.pdf'
 
 const IndexPage = () => {
   const url = (name, wrap = false) =>
@@ -81,24 +86,21 @@ const IndexPage = () => {
   return (
     <div className="w-full h-full">
       <Parallax
-        pages={5}
+        pages={6}
         ref={parallax}
         style={{ overflow: "hidden", scrollbarWidth: "0" }}
       >
         <ParallaxLayer
-          offset={0}
+          offset={0.1}
           speed={0}
-          factor={5}
+          factor={6}
           style={{
             backgroundImage: url("stars", true),
             backgroundSize: "cover",
           }}
         ></ParallaxLayer>
 
-        <div
-          className="flex justify-center items-center flex-col sm:flex-row w-full gap-12"
-          onClick={() => (parallax.current.scrollTo(0.8), setAstro(true))}
-        >
+        <div className="flex justify-center items-center flex-col sm:flex-row w-full h-full gap-12">
           <ParallaxLayer
             offset={0.1}
             speed={-0.3}
@@ -152,7 +154,7 @@ const IndexPage = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={1.1}
+              offset={1}
               speed={1.2}
               factor={0.8}
               className="w-full h-full flex justify-center items-center"
@@ -168,18 +170,9 @@ const IndexPage = () => {
               </div>
             </ParallaxLayer>
 
-            <ParallaxLayer
-              offset={0.5}
-              speed={0.2}
-              className="ml-[8em] md:ml-[12em]"
-            >
-              <div className="font-bold text-yellow-600 flex flex-col justify-center items-center">
-                <PiHandTap className="fill-white text-5xl animate-jump animate-infinite animate-duration-[1000ms] animate-ease-linear animate-normal animate-fill-forwards" />
-                <span style={{ fontFamily: "Roboto1" }} className="text-center">
-                  Tap screen <br />
-                  to <br />
-                  scroll!
-                </span>
+            <ParallaxLayer offset={0.5} speed={0.2}>
+              <div className="font-bold text-yellow-600 flex flex-col justify-center items-center rotate-180 mr-[12em] mt-[12em] md:mt-[14em] lg:mt-[12em]">
+                <BsArrowUpCircle className="fill-white text-5xl animate-jump animate-infinite animate-duration-[1000ms] animate-ease-linear animate-normal animate-fill-forwards" />
               </div>
             </ParallaxLayer>
           </div>
@@ -189,7 +182,10 @@ const IndexPage = () => {
             speed={1}
             className="w-full h-full flex justify-center items-center"
           >
-            <div className="w-full sm:w-[50%]">
+            <div
+              className="w-full sm:w-[50%]"
+              onClick={() => (parallax.current.scrollTo(0.8), setAstro(true))}
+            >
               <h1
                 className="text-center text-6xl md:text-7xl cursor-pointer text-red-600"
                 style={{ fontFamily: "Barriecito" }}
@@ -441,13 +437,9 @@ const IndexPage = () => {
 
         <div
           className="w-full h-full"
-          onClick={() => parallax.current.scrollTo(4)}
+          onClick={() => (parallax.current.scrollTo(4), setAstro(false))}
         >
-          <ParallaxLayer
-            offset={3.05}
-            speed={0.8}
-            onClick={() => parallax.current.scrollTo(4)}
-          >
+          <ParallaxLayer offset={3.05} speed={0.8}>
             <div className="flex flex-col w-full h-full  gap-16">
               <h1
                 className="text-white text-center text-6xl md:text-8xl"
@@ -491,17 +483,47 @@ const IndexPage = () => {
           </ParallaxLayer>
         </div>
 
-        <ParallaxLayer
-          offset={4}
-          speed={1.5}
-          factor={2}
-          style={{
-            backgroundPosition: "center",
-            backgroundImage: url("earth", true),
-          }}
-          onClick={() => (parallax.current.scrollTo(0), setAstro(false))}
-          className="object-contain"
-        ></ParallaxLayer>
+        <div className="w-full h-full">
+          <ParallaxLayer offset={4.56} speed={2}>
+            <img
+              src={url("earth")}
+              alt="rearth"
+              className="w-full h-full md:h-[80%] object-contain"
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={4} speed={2}>
+            <BsArrowUpCircle
+              onClick={() => parallax.current.scrollTo(0)}
+              className="fill-white text-5xl animate-jump animate-infinite animate-duration-[1000ms] animate-ease-linear animate-normal animate-fill-forwards cursor-pointer m-2"
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={4.05} speed={1.8}>
+            <div className="w-full h-full">
+              <h1
+                className="text-white text-center text-6xl md:text-8xl"
+                style={{ fontFamily: "Barriecito" }}
+              >
+                Let's
+                <br />{" "}
+                <span className="text-red-600">
+                  {" "}
+                  work
+                 
+                </span>{" "}
+                Toghether
+              </h1>
+
+                <div className="flex justify-center items-center py-96 md:py-96 lg:py-72 gap-4 md:gap-10">
+                <a href="mailto:zanduva@gmail.com"><BiLogoGmail className="fill-red-500 text-7xl text-center flex justify-center items-center" /></a>
+                <Link to="https://www.linkedin.com/in/asael-hernandez-diaz/" target="_blank"><BsLinkedin className="fill-blue-600 text-7xl text-center flex justify-center items-center" /></Link>
+                <Link to="https://www.github.com/Azzzako" target="_blank"><IoLogoGithub className="fill-white text-7xl text-center flex justify-center items-center" /></Link>
+                <a href={CV} download><IoFolder className="fill-yellow-500 text-7xl text-center flex justify-center items-center" /></a>
+                </div>
+            </div>
+          </ParallaxLayer>
+        </div>
       </Parallax>
     </div>
   )
